@@ -1,15 +1,75 @@
 @import "tailwindcss";
 
-@theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+:root {
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
 }
 
-html,
-body {
-  @apply bg-white dark:bg-gray-950;
-
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
+.card {
+  @apply bg-white rounded-[20px] shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 
+  w-full h-[350px] max-w-[90%] min-w-[50px] mx-auto m-3 relative;
 }
+
+.image {
+  @apply w-full h-full bg-gray-300 mx-auto rounded-t-xl;
+}
+
+.image img {
+  @apply object-cover w-full h-full
+}
+
+.image video {
+  @apply object-cover w-full h-full
+}
+
+
+.footer-card {
+  @apply absolute bottom-0 left-0 right-0 h-[25%] w-full z-10 bg-[linear-gradient(180deg,_rgba(0,0,0,0.005)_0%,_rgba(0,0,0,1)_100%)]
+}
+
+.forecast {
+  @apply flex items-center content-center w-full
+}
+
+.forecast > div {
+  @apply flex items-center justify-center w-full text-[#e7e8e9] text-[14px] mx-3
+}
+
+/* .footer-card svg {
+  @apply w-[24px] h-auto  my-2 mr-1
+} */
+
+/* .footer-card i {
+  @apply w-[24px] h-auto text-[#ffffff] text-[20px] ml-1
+} */
+
+.line {
+  @apply w-[90%] mx-auto border-[0.5px] border-[#ffffff] h-[2px] mt-3 opacity-35 bg-[#ffffff] rounded-[100%]
+}
+
+.forecast p {
+  @apply flex h-[16px]
+}
+/* .content-section {
+  @apply w-full h-[30%] flex flex-col items-center absolute
+} */
+
+/* .weather-info {
+  @apply flex items-center justify-around text-center top-0 right-[0%] w-full pt-[15px] text-white z-0
+} */
+
+/* .weather-info .right-side {
+  @apply flex flex-col items-end w-full mx-3
+}
+
+.weather-info .right-side .location {
+  @apply flex items-center justify-end 
+}
+
+.weather-info .right-side .location svg {
+  @apply w-[32px] h-auto
+}
+
+.weather-info .right-side .location span {
+  @apply text-[16px] font-semibold w-fit max-w-[140px] leading-[16px] text-right break-words whitespace-normal h-[25px]
+} */
+
