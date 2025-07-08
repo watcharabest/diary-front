@@ -115,7 +115,7 @@ export function Welcome() {
 
   return (
     <main>
-      <div className="flex justify-center mx-6 my-8 text-5xl font-bold text-gray-300">2025</div>
+      <div className="flex justify-center mx-6 my-3 text-5xl font-bold text-gray-300">2025</div>
       <div className="line bg-gray-300"></div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 max-w-7xl mx-auto w-[300px] min-w-[40%] sm:w-full">
 
