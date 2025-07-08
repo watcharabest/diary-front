@@ -115,7 +115,8 @@ export function Welcome() {
 
   return (
     <main>
-      <div className="flex justify-center mx-6 my-8 text-5xl font-bold border-b-2 border-gray-300 pb-2">2025</div>
+      <div className="flex justify-center mx-6 my-8 text-5xl font-bold text-gray-300">2025</div>
+      <div className="line bg-gray-300"></div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 max-w-7xl mx-auto w-[300px] min-w-[40%] sm:w-full">
 
         <div className="card">
@@ -126,7 +127,7 @@ export function Welcome() {
                 alt="White House"
               />
             ) : (
-              <video src={Jan[janIndex].src} autoPlay loop muted />
+              <video src={Jan[janIndex].src} autoPlay loop muted playsInline/>
             )}
             <section className="footer-card">
               <div className="forecast">
@@ -168,7 +169,7 @@ export function Welcome() {
                 alt="White House"
               />
             ) : (
-              <video src={March[marchIndex].src} autoPlay loop muted />
+              <video src={March[marchIndex].src} autoPlay loop muted playsInline/>
             )}
             <section className="footer-card">
               <div className="forecast">
@@ -210,7 +211,7 @@ export function Welcome() {
                 alt="Sai Kaew Beach ,Chonburi"
               />
             ) : (
-              <video src={May[mayIndex].src} autoPlay loop muted />
+              <video src={May[mayIndex].src} autoPlay loop muted playsInline/>
             )}
             <section className="footer-card">
               <div className="forecast">

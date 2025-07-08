@@ -4,23 +4,36 @@
   font-family: 'Nimbus Mono PS', 'Courier New', monospace;
 }
 
+body {
+  @apply bg-cover bg-center;
+  background-image:
+  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  url('/IMG_4928.jpg');
+}
+
 .card {
   @apply bg-white rounded-[20px] shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 
   w-full h-[350px] max-w-[90%] min-w-[50px] mx-auto m-3 relative;
 }
 
 .image {
-  @apply w-full h-full bg-gray-300 mx-auto rounded-t-xl;
+  @apply w-full h-full bg-gray-300 mx-auto rounded-t-xl transition
 }
 
 .image img {
-  @apply object-cover w-full h-full
+  @apply object-cover w-full h-full;
+  animation: fadeIn 0.3s ease-in-out forwards;
 }
 
 .image video {
-  @apply object-cover w-full h-full
+  @apply object-cover w-full h-full;
+  animation: fadeIn 0.3s ease-in-out forwards;
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
 .footer-card {
   @apply absolute bottom-0 left-0 right-0 h-[25%] w-full z-10 bg-[linear-gradient(180deg,_rgba(0,0,0,0.005)_0%,_rgba(0,0,0,1)_100%)]
