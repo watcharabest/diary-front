@@ -22,6 +22,21 @@ export function Welcome() {
     },
   ];
 
+  const Feb: MediaItem[] = [
+    {
+      type: "image",
+      src: "/feb/feb1.jpg",
+    },
+    {
+      type: "image",
+      src: "/feb/feb2.jpg",
+    },
+    {
+      type: "video",
+      src: "/feb/IMG_6210.mp4",
+    },
+  ];
+
   const March: MediaItem[] = [
     {
       type: "image",
@@ -34,6 +49,21 @@ export function Welcome() {
     {
       type: "video",
       src: "/march/IMG_7311.mp4",
+    },
+  ];
+
+  const April: MediaItem[] = [
+    {
+      type: "image",
+      src: "/apr/apr1.jpg",
+    },
+    {
+      type: "image",
+      src: "/apr/apr2.jpg",
+    },
+    {
+      type: "video",
+      src: "/apr/IMG_8059.mp4",
     },
   ];
 
@@ -53,7 +83,9 @@ export function Welcome() {
   ];
 
   const [janIndex, setJanIndex] = useState(0);
+  const [febIndex, setFebIndex] = useState(0);
   const [marchIndex, setMarchIndex] = useState(0);
+  const [aprilIndex, setAprilIndex] = useState(0);
   const [mayIndex, setMayIndex] = useState(0);
 
   const prevJan = () => {
@@ -75,6 +107,25 @@ export function Welcome() {
     }
   };
 
+  const prevFeb = () => {
+    setFebIndex((prev) => (prev === 0 ? Feb.length - 1 : prev - 1));
+  };
+
+  const nextFeb = () => {
+    setFebIndex((prev) => (prev === Feb.length - 1 ? 0 : prev + 1));
+  };
+
+  const handleFebClick = (e: React.MouseEvent<HTMLImageElement>) => {
+    const bounds = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - bounds.left;
+    const width = bounds.width;
+    if (x < width / 2) {
+      prevFeb();
+    } else {
+      nextFeb();
+    }
+  };
+
   const prevMarch = () => {
     setMarchIndex((prev) => (prev === 0 ? March.length - 1 : prev - 1));
   };
@@ -91,6 +142,25 @@ export function Welcome() {
       prevMarch();
     } else {
       nextMarch();
+    }
+  };
+
+  const prevApril = () => {
+    setAprilIndex((prev) => (prev === 0 ? April.length - 1 : prev - 1));
+  };
+
+  const nextApril = () => {
+    setAprilIndex((prev) => (prev === April.length - 1 ? 0 : prev + 1));
+  };
+
+  const handleAprilClick = (e: React.MouseEvent<HTMLImageElement>) => {
+    const bounds = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - bounds.left;
+    const width = bounds.width;
+    if (x < width / 2) {
+      prevApril();
+    } else {
+      nextApril();
     }
   };
 
@@ -145,7 +215,15 @@ export function Welcome() {
           </div>
         </div>
         <div className="card">
-          <div className="image">
+          <div className="image" onClick={handleFebClick}>
+            {Feb[febIndex].type === "image" ? (
+              <img
+                src={Feb[febIndex].src}
+                alt="White House"
+              />
+            ) : (
+              <video src={Feb[febIndex].src} autoPlay loop muted playsInline/>
+            )}
             <section className="footer-card">
               <div className="forecast">
                 <div>
@@ -187,7 +265,15 @@ export function Welcome() {
           </div>
         </div>
         <div className="card">
-          <div className="image">
+          <div className="image" onClick={handleAprilClick}>
+            {April[aprilIndex].type === "image" ? (
+              <img
+                src={April[aprilIndex].src}
+                alt="White House"
+              />
+            ) : (
+              <video src={April[aprilIndex].src} autoPlay loop muted playsInline/>
+            )}
             <section className="footer-card">
               <div className="forecast">
                 <div>
